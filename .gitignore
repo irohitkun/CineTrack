@@ -1,0 +1,29 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Gradle
+.gradle/
+build/
+
+# Local configuration (contains API keys)
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Android Studio captures
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Log files
+*.log
