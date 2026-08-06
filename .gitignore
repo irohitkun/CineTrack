@@ -27,3 +27,6 @@ captures/
 
 # Log files
 *.log
+
+#keystore 
+keystore.properties
