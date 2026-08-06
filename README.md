@@ -168,6 +168,6 @@ This product uses the [TMDB API](https://www.themoviedb.org/documentation/api) b
 
 ##Credits
 
-Authored by (Rohit)[https://github.com/irohitkun]
+Authored by [Rohit](https://github.com/irohitkun)
 
-Co-Authored by (Cursor AI)[<cursoragent@cursor.com>]
+Co-Authored by [Cursor AI](<cursoragent@cursor.com>)
