@@ -13,10 +13,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.cinetrack.app.domain.model.MediaType
+import com.cinetrack.app.ui.screens.details.DetailsScreen
 import com.cinetrack.app.ui.screens.home.HomeScreen
 import com.cinetrack.app.ui.screens.library.LibraryScreen
 import com.cinetrack.app.ui.screens.profile.ProfileScreen
@@ -74,10 +78,41 @@ fun CineTrackApp() {
             startDestination = Routes.HOME,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Routes.HOME) { HomeScreen() }
-            composable(Routes.SEARCH) { SearchScreen() }
+            composable(Routes.HOME) {
+                HomeScreen(
+                    onMediaClick = { item ->
+                        navController.navigate(
+                            Routes.details(item.mediaType.apiValue, item.id)
+                        )
+                    }
+                )
+            }
+            composable(Routes.SEARCH) {
+                SearchScreen(
+                    onMediaClick = { item ->
+                        navController.navigate(
+                            Routes.details(item.mediaType.apiValue, item.id)
+                        )
+                    }
+                )
+            }
             composable(Routes.LIBRARY) { LibraryScreen() }
             composable(Routes.PROFILE) { ProfileScreen() }
+            composable(
+                route = Routes.DETAILS,
+                arguments = listOf(
+                    navArgument("mediaType") { type = NavType.StringType },
+                    navArgument("mediaId") { type = NavType.IntType }
+                )
+            ) { entry ->
+                val mediaType = MediaType.fromApi(entry.arguments?.getString("mediaType"))
+                val mediaId = entry.arguments?.getInt("mediaId") ?: 0
+                DetailsScreen(
+                    mediaType = mediaType,
+                    mediaId = mediaId,
+                    onBack = { navController.popBackStack() }
+                )
+            }
         }
     }
 }

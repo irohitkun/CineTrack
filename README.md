@@ -108,10 +108,10 @@ app/src/main/java/com/cinetrack/app/
 | Phase | Status | Deliverable |
 |-------|--------|-------------|
 | **0** | ✅ Done | Scaffold, Material 3 theme, Hilt, bottom nav shell, README, builds |
-| **1** | Pending | Domain models, TMDB API layer, Room, repositories, Hilt DI modules |
-| **2** | Pending | Reusable Compose components (PosterCard, SectionRow, Loading/Error/Empty) |
-| **3** | Pending | Home: Trending / Now Playing / Upcoming / Top Rated / Popular (movies + TV) |
-| **4** | Pending | Search: live debounced TMDB search (movies + TV) |
+| **1** | ✅ Done | Domain models, TMDB API layer, Room, repositories, Hilt DI modules |
+| **2** | ✅ Done | Reusable Compose components (PosterCard, SectionRow, Loading/Error/Empty) |
+| **3** | ✅ Done | Home: Trending / Now Playing / Upcoming / Top Rated / Popular (movies + TV) |
+| **4** | ✅ Done | Search: live debounced TMDB search (movies + TV) |
 | **5** | Pending | Details: full metadata, cast, library actions, TV episode progress |
 | **6** | Pending | Library: Watching / Completed / Plan To Watch / Favorites from Room |
 | **7** | Pending | Profile stats + Settings (theme, clear/export/import library, TMDB attribution) |
@@ -170,3 +170,5 @@ This product uses the [TMDB API](https://www.themoviedb.org/documentation/api) b
 ## License
 
 Proprietary — built for client delivery.
+
+agent --resume=b4dff60d-09c8-4cd9-b579-9dd8930cab0e
