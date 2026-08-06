@@ -2,7 +2,6 @@
 
 A modern movie & TV tracking application for Android. Discover content via TMDB, track what you're watching, and manage your personal library — **not** a streaming platform.
 
-> **Resume tip:** You do **not** need to save/export this chat. Everything required to continue is in this README. Open the project and say **"start Phase 1"** (or whichever phase is next).
 
 ## Tech Stack
 
@@ -166,9 +165,3 @@ Chat export is optional. Prefer this README as continuity.
 ## TMDB Attribution
 
 This product uses the [TMDB API](https://www.themoviedb.org/documentation/api) but is not endorsed or certified by TMDB.
-
-## License
-
-Proprietary — built for client delivery.
-
-agent --resume=b4dff60d-09c8-4cd9-b579-9dd8930cab0e
