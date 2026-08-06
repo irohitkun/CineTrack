@@ -1,4 +1,12 @@
+import java.io.FileInputStream
 import java.util.Properties
+
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
 
 plugins {
     alias(libs.plugins.android.application)
@@ -17,6 +25,15 @@ if (localPropertiesFile.exists()) {
 android {
     namespace = "com.cinetrack.app"
     compileSdk = 36
+    
+    signingConfigs {
+    create("release") {
+        storeFile = file(keystoreProperties["storeFile"] as String)
+        storePassword = keystoreProperties["storePassword"] as String
+        keyAlias = keystoreProperties["keyAlias"] as String
+        keyPassword = keystoreProperties["keyPassword"] as String
+    }
+}
 
     defaultConfig {
         applicationId = "com.cinetrack.app"
@@ -38,6 +55,8 @@ android {
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
+            
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
