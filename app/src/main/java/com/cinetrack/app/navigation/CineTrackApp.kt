@@ -19,7 +19,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.cinetrack.app.domain.model.MediaType
 import com.cinetrack.app.ui.screens.details.DetailsScreen
 import com.cinetrack.app.ui.screens.home.HomeScreen
 import com.cinetrack.app.ui.screens.library.LibraryScreen
@@ -96,7 +95,15 @@ fun CineTrackApp() {
                     }
                 )
             }
-            composable(Routes.LIBRARY) { LibraryScreen() }
+            composable(Routes.LIBRARY) {
+                LibraryScreen(
+                    onMediaClick = { item ->
+                        navController.navigate(
+                            Routes.details(item.mediaType.apiValue, item.tmdbId)
+                        )
+                    }
+                )
+            }
             composable(Routes.PROFILE) { ProfileScreen() }
             composable(
                 route = Routes.DETAILS,
@@ -105,11 +112,7 @@ fun CineTrackApp() {
                     navArgument("mediaId") { type = NavType.IntType }
                 )
             ) { entry ->
-                val mediaType = MediaType.fromApi(entry.arguments?.getString("mediaType"))
-                val mediaId = entry.arguments?.getInt("mediaId") ?: 0
                 DetailsScreen(
-                    mediaType = mediaType,
-                    mediaId = mediaId,
                     onBack = { navController.popBackStack() }
                 )
             }

@@ -112,10 +112,10 @@ app/src/main/java/com/cinetrack/app/
 | **2** | ✅ Done | Reusable Compose components (PosterCard, SectionRow, Loading/Error/Empty) |
 | **3** | ✅ Done | Home: Trending / Now Playing / Upcoming / Top Rated / Popular (movies + TV) |
 | **4** | ✅ Done | Search: live debounced TMDB search (movies + TV) |
-| **5** | Pending | Details: full metadata, cast, library actions, TV episode progress |
-| **6** | Pending | Library: Watching / Completed / Plan To Watch / Favorites from Room |
-| **7** | Pending | Profile stats + Settings (theme, clear/export/import library, TMDB attribution) |
-| **8** | Pending | Polish: pull-to-refresh, recently viewed, infinite scroll, etc. |
+| **5** | ✅ Done | Details: full metadata, cast, library actions, TV episode progress |
+| **6** | ✅ Done | Library: Watching / Completed / Plan To Watch / Favorites from Room |
+| **7** | ✅ Done | Profile stats + Settings (theme, clear/export/import library, TMDB attribution) |
+| **8** | Pending | Polish: recently viewed, search history, infinite scroll, etc. |
 
 ### Phase details (for resume)
 
