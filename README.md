@@ -165,3 +165,9 @@ Chat export is optional. Prefer this README as continuity.
 ## TMDB Attribution
 
 This product uses the [TMDB API](https://www.themoviedb.org/documentation/api) but is not endorsed or certified by TMDB.
+
+##Credits
+
+Authored by (Rohit)[https://github.com/irohitkun]
+
+Co-Authored by (Cursor AI)[<cursoragent@cursor.com>]
